@@ -411,33 +411,32 @@
             let currentSectionId = '';
             let minDistance = Infinity;
             let firstSectionId = sections.length > 0 ? sections[0].getAttribute('id') : '';
-            const scrollY = window.pageYOffset;
+            const scrollY = window.pageYOffset + headerOffset;
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerOffset;
-                const sectionBottom = sectionTop + section.offsetHeight;
-
-                if (scrollY >= sectionTop && scrollY < sectionBottom) {
-                    currentSectionId = section.getAttribute('id');
-                    minDistance = 0;
-                    return;
-                }
-
-                if (minDistance > 0) {
-                     const distance = Math.abs(scrollY - sectionTop);
-                     if (scrollY < sectionBottom && distance < minDistance) {
-                         minDistance = distance;
-                         currentSectionId = section.getAttribute('id');
-                     }
-                 }
-            });
-
-            if (sections.length > 0 && scrollY < sections[0].offsetTop - headerOffset) {
-                 currentSectionId = firstSectionId;
-            }
-
-            if (sections.length > 0 && scrollY >= (sections[sections.length - 1].offsetTop - headerOffset + sections[sections.length - 1].offsetHeight)) {
+            // Check if we're near the bottom of the page
+            const nearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50;
+            
+            if (nearBottom && sections.length > 0) {
                 currentSectionId = sections[sections.length - 1].getAttribute('id');
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                        currentSectionId = section.getAttribute('id');
+                        minDistance = 0;
+                        return;
+                    }
+
+                    if (minDistance > 0) {
+                         const distance = Math.abs(scrollY - sectionTop);
+                         if (distance < minDistance) {
+                             minDistance = distance;
+                             currentSectionId = section.getAttribute('id');
+                         }
+                     }
+                });
             }
 
             if (!currentSectionId && firstSectionId) {
