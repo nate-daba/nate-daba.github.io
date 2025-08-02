@@ -409,36 +409,37 @@
 
         const onScroll = () => {
             let currentSectionId = '';
-            let minDistance = Infinity;
             let firstSectionId = sections.length > 0 ? sections[0].getAttribute('id') : '';
-            const scrollY = window.pageYOffset + headerOffset;
+            const scrollY = window.pageYOffset;
 
-            // Check if we're near the bottom of the page
-            const nearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 50;
-            
-            if (nearBottom && sections.length > 0) {
-                currentSectionId = sections[sections.length - 1].getAttribute('id');
-            } else {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - headerOffset;
+                const sectionBottom = sectionTop + section.offsetHeight;
+
+                if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            // If no section was found (e.g., we're between sections), find the closest one
+            if (!currentSectionId) {
+                let closestDistance = Infinity;
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                    const sectionTop = section.offsetTop - headerOffset;
+                    const distance = Math.abs(scrollY - sectionTop);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
                         currentSectionId = section.getAttribute('id');
-                        minDistance = 0;
-                        return;
                     }
-
-                    if (minDistance > 0) {
-                         const distance = Math.abs(scrollY - sectionTop);
-                         if (distance < minDistance) {
-                             minDistance = distance;
-                             currentSectionId = section.getAttribute('id');
-                         }
-                     }
                 });
             }
 
+            // Special case: if we're at the very bottom of the page, highlight the last section
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 10) {
+                currentSectionId = sections[sections.length - 1].getAttribute('id');
+            }
+
+            // Fallback to first section if still no section found
             if (!currentSectionId && firstSectionId) {
                 currentSectionId = firstSectionId;
             }
