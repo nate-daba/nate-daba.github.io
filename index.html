@@ -409,52 +409,26 @@
 
         const onScroll = () => {
             let currentSectionId = '';
-            let firstSectionId = sections.length > 0 ? sections[0].getAttribute('id') : '';
             const scrollY = window.pageYOffset;
-            const windowHeight = window.innerHeight;
-            const viewportCenter = scrollY + windowHeight / 2;
-
-            // Find the section that contains the center of the viewport
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - headerOffset;
-                const sectionBottom = sectionTop + section.offsetHeight;
-
-                if (viewportCenter >= sectionTop && viewportCenter < sectionBottom) {
+            
+            // Simple approach: find which section we've scrolled past
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                const sectionTop = section.offsetTop - headerOffset - 50; // 50px buffer
+                
+                if (scrollY >= sectionTop) {
                     currentSectionId = section.getAttribute('id');
+                    break;
                 }
-            });
-
-            // If no section found with center method, use traditional top-based detection
-            if (!currentSectionId) {
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - headerOffset;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (scrollY >= sectionTop && scrollY < sectionBottom) {
-                        currentSectionId = section.getAttribute('id');
-                    }
-                });
             }
 
-            // If still no section found, find the closest one above the current scroll position
-            if (!currentSectionId) {
-                let lastPassedSection = firstSectionId;
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - headerOffset;
-                    if (scrollY >= sectionTop) {
-                        lastPassedSection = section.getAttribute('id');
-                    }
-                });
-                currentSectionId = lastPassedSection;
+            // Fallback to first section if none found
+            if (!currentSectionId && sections.length > 0) {
+                currentSectionId = sections[0].getAttribute('id');
             }
 
-            // Fallback to first section if still no section found
-            if (!currentSectionId && firstSectionId) {
-                currentSectionId = firstSectionId;
-            }
-
-             const activeLink = document.querySelector(`.nav-link[href="#${currentSectionId}"]`);
-             activateNavLink(activeLink);
+            const activeLink = document.querySelector(`.nav-link[href="#${currentSectionId}"]`);
+            activateNavLink(activeLink);
         };
 
         // Close Mobile Menu on Link Click
