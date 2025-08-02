@@ -411,32 +411,41 @@
             let currentSectionId = '';
             let firstSectionId = sections.length > 0 ? sections[0].getAttribute('id') : '';
             const scrollY = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            const viewportCenter = scrollY + windowHeight / 2;
 
+            // Find the section that contains the center of the viewport
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - headerOffset;
                 const sectionBottom = sectionTop + section.offsetHeight;
 
-                if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                if (viewportCenter >= sectionTop && viewportCenter < sectionBottom) {
                     currentSectionId = section.getAttribute('id');
                 }
             });
 
-            // If no section was found (e.g., we're between sections), find the closest one
+            // If no section found with center method, use traditional top-based detection
             if (!currentSectionId) {
-                let closestDistance = Infinity;
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop - headerOffset;
-                    const distance = Math.abs(scrollY - sectionTop);
-                    if (distance < closestDistance) {
-                        closestDistance = distance;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollY >= sectionTop && scrollY < sectionBottom) {
                         currentSectionId = section.getAttribute('id');
                     }
                 });
             }
 
-            // Special case: if we're at the very bottom of the page, highlight the last section
-            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 10) {
-                currentSectionId = sections[sections.length - 1].getAttribute('id');
+            // If still no section found, find the closest one above the current scroll position
+            if (!currentSectionId) {
+                let lastPassedSection = firstSectionId;
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - headerOffset;
+                    if (scrollY >= sectionTop) {
+                        lastPassedSection = section.getAttribute('id');
+                    }
+                });
+                currentSectionId = lastPassedSection;
             }
 
             // Fallback to first section if still no section found
