@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -20,11 +20,9 @@
                 <a href="#home">Natnael Daba</a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#research" class="nav-link">Research</a>
+                <a href="#home" class="nav-link">About</a>
                 <a href="#publications" class="nav-link">Publications</a>
                 <a href="#news" class="nav-link">News</a>
-                <a href="data/CV.pdf" class="nav-link" target="_blank">CV</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="hamburger" id="hamburger">
@@ -35,204 +33,155 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="greeting">Hi, I'm</span>
-                        <span class="name">Natnael Daba</span>
-                    </h1>
-                    <p class="hero-subtitle">PhD Student in Computer Vision & Machine Learning</p>
-                    <p class="hero-description">
-                        I am a Ph.D. student in the Department of Electrical and Computer Engineering at the 
-                        <strong>University of Arizona</strong>, working under the supervision of 
-                        <a href="https://ece.engineering.arizona.edu/faculty-staff/faculty/abhijit-mahalanobis" target="_blank">Prof. Abhijit Mahalanobis</a>. 
-                        My research focuses on computer vision and machine learning, with applications in visual localization, 
-                        object detection, and novel view synthesis.
-                    </p>
-                    <div class="hero-links">
-                        <a href="mailto:ndaba@arizona.edu" class="btn btn-primary">
-                            <i data-feather="mail"></i>
-                            Get in Touch
-                        </a>
-                        <a href="data/CV.pdf" class="btn btn-secondary" target="_blank">
-                            <i data-feather="file-text"></i>
-                            View CV
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="images/profile_pic_circular.png" alt="Natnael Daba" class="profile-img">
-                        <div class="image-background"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>
-                        Prior to my PhD, I received my master's degree in Electrical and Computer Engineering from 
-                        <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, with a concentration in machine learning.
-                    </p>
-                    <p>
-                        My research interests span computer vision and machine learning, with particular focus on 
-                        visual localization, object detection/classification, and novel view synthesis. I'm also 
-                        exploring vision-language models, generative modeling, and diffusion models.
-                    </p>
-                </div>
-                <div class="social-links">
-                    <a href="mailto:ndaba@arizona.edu" class="social-link" title="Email">
-                        <i data-feather="mail"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=6vzm-SMAAAAJ&hl=en#" class="social-link" title="Google Scholar" target="_blank">
-                        <i data-feather="book-open"></i>
-                    </a>
-                    <a href="https://github.com/nate-daba" class="social-link" title="GitHub" target="_blank">
-                        <i data-feather="github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/natnael-daba-435767105/" class="social-link" title="LinkedIn" target="_blank">
-                        <i data-feather="linkedin"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Section -->
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research Areas</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i data-feather="eye"></i>
-                    </div>
-                    <h3>Computer Vision</h3>
-                    <p>Visual localization, object detection and classification, novel view synthesis</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i data-feather="cpu"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <p>Deep learning, generative modeling, diffusion models, and neural networks</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i data-feather="message-square"></i>
-                    </div>
-                    <h3>Vision-Language Models</h3>
-                    <p>Multimodal AI, vision-language understanding, and cross-modal learning</p>
-                </div>
-                <div class="research-card">
-                    <div class="research-icon">
-                        <i data-feather="layers"></i>
-                    </div>
-                    <h3>Multi-Modal Learning</h3>
-                    <p>Cross-modal synthesis, unified representations, and geospatial imaging</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Publications</h2>
-            <div class="publications-list">
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h3 class="publication-title">
-                            <a href="https://arxiv.org/abs/2501.09838" target="_blank">
-                                CrossModalityDiffusion: Multi-Modal Novel View Synthesis with Unified Intermediate Representation
-                            </a>
-                        </h3>
-                        <div class="publication-authors">
-                            Alex Berian, Daniel Brignac, JhihYang Wu, <strong>Natnael Daba</strong>, Abhijit Mahalanobis
-                        </div>
-                        <div class="publication-venue">
-                            <span class="venue">WACV 2025 Workshop (GeoCV)</span>
-                            <span class="year">2025</span>
-                        </div>
-                        <p class="publication-abstract">
-                            We propose a modular framework for generating images across different sensing modalities 
-                            (EO, SAR, LiDAR) and viewpoints using geometry-aware feature volumes and unified intermediate representations.
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- About Section -->
+        <section id="home" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1 class="name">Natnael Daba</h1>
+                        <p class="title">PhD Student in Computer Vision & Machine Learning</p>
+                        <p class="affiliation">
+                            Department of Electrical and Computer Engineering<br>
+                            University of Arizona
                         </p>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/abs/2501.09838" class="pub-link" target="_blank">
-                                <i data-feather="file-text"></i>
-                                Paper
+                        
+                        <div class="bio">
+                            <p>
+                                I am a Ph.D. student working under the supervision of 
+                                <a href="https://ece.engineering.arizona.edu/faculty-staff/faculty/abhijit-mahalanobis" target="_blank">Prof. Abhijit Mahalanobis</a>. 
+                                My research focuses on computer vision and machine learning, with applications in visual localization, 
+                                object detection, and novel view synthesis. I'm particularly interested in vision-language models, 
+                                generative modeling, and diffusion models.
+                            </p>
+                            <p>
+                                Prior to my PhD, I received my master's degree in Electrical and Computer Engineering from 
+                                <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, with a concentration in machine learning.
+                            </p>
+                        </div>
+
+                        <div class="action-buttons">
+                            <a href="mailto:ndaba@arizona.edu" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Email
                             </a>
+                            <a href="https://github.com/nate-daba" class="btn btn-github" target="_blank">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                            <a href="data/CV.pdf" class="btn btn-secondary" target="_blank">
+                                <i class="fas fa-file-pdf"></i>
+                                CV
+                            </a>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://scholar.google.com/citations?user=6vzm-SMAAAAJ&hl=en#" class="social-link scholar" title="Google Scholar" target="_blank">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/natnael-daba-435767105/" class="social-link linkedin" title="LinkedIn" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/nate-daba" class="social-link github" title="GitHub" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <img src="images/profile_pic_circular.png" alt="Natnael Daba" class="profile-img">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- News Section -->
-    <section id="news" class="news">
-        <div class="container">
-            <h2 class="section-title">News & Updates</h2>
-            <div class="news-list">
-                <div class="news-item">
-                    <div class="news-date">Jan 2025</div>
-                    <div class="news-content">
-                        <h3>Paper Accepted at WACV 2025 Workshop</h3>
-                        <p>Our paper "CrossModalityDiffusion" has been accepted at the GeoCV workshop at WACV 2025!</p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="news-date">2024</div>
-                    <div class="news-content">
-                        <h3>Continuing PhD Research</h3>
-                        <p>Making progress on visual localization and novel view synthesis research projects.</p>
+        <!-- Publications Section -->
+        <section id="publications" class="publications-section">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3 class="publication-title">
+                                <a href="https://arxiv.org/abs/2501.09838" target="_blank">
+                                    CrossModalityDiffusion: Multi-Modal Novel View Synthesis with Unified Intermediate Representation
+                                </a>
+                            </h3>
+                            <div class="publication-authors">
+                                Alex Berian, Daniel Brignac, JhihYang Wu, <strong>Natnael Daba</strong>, Abhijit Mahalanobis
+                            </div>
+                            <div class="publication-venue">
+                                <span class="venue">WACV 2025 Workshop (GeoCV)</span>
+                                <span class="year">2025</span>
+                            </div>
+                            <p class="publication-abstract">
+                                We propose a modular framework for generating images across different sensing modalities 
+                                (EO, SAR, LiDAR) and viewpoints using geometry-aware feature volumes and unified intermediate representations.
+                            </p>
+                            <div class="publication-links">
+                                <a href="https://arxiv.org/abs/2501.09838" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-alt"></i>
+                                    Paper
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm always interested in discussing research collaborations, opportunities, or just chatting about computer vision and ML!</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i data-feather="mail"></i>
-                        <a href="mailto:ndaba@arizona.edu">ndaba@arizona.edu</a>
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <h2 class="section-title">News & Updates</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-date">Jan 2025</div>
+                        <div class="news-content">
+                            <strong>Paper Accepted!</strong> Our paper "CrossModalityDiffusion" has been accepted at the GeoCV workshop at WACV 2025.
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i data-feather="map-pin"></i>
-                        <span>University of Arizona, Tucson, AZ</span>
+                    <div class="news-item">
+                        <div class="news-date">2024</div>
+                        <div class="news-content">
+                            <strong>Research Progress:</strong> Making significant progress on visual localization and novel view synthesis projects.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p>I'm always interested in discussing research collaborations, opportunities, or just chatting about computer vision and ML!</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ndaba@arizona.edu">ndaba@arizona.edu</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>University of Arizona, Tucson, AZ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Natnael Daba. All rights reserved.</p>
-            <p>Last updated: January 2025</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        feather.replace();
-    </script>
 </body>
 </html>
