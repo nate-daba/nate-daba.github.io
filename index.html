@@ -189,6 +189,8 @@
             <div class="hidden md:flex space-x-3">
                 <a href="#about" class="nav-link px-3 py-1 rounded-md text-sm">About</a>
                 <a href="#publications" class="nav-link px-3 py-1 rounded-md text-sm">Publications</a>
+                <a href="#awards" class="nav-link px-3 py-1 rounded-md text-sm">Awards</a>
+                <a href="#services" class="nav-link px-3 py-1 rounded-md text-sm">Services</a>
                 <a href="#contact" class="nav-link px-3 py-1 rounded-md text-sm">Contact</a>
             </div>
             <div class="md:hidden">
@@ -200,6 +202,8 @@
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-3 space-y-1 border-t">
              <a href="#about" class="nav-link block py-2">About</a>
             <a href="#publications" class="nav-link block py-2">Publications</a>
+            <a href="#awards" class="nav-link block py-2">Awards</a>
+            <a href="#services" class="nav-link block py-2">Services</a>
             <a href="#contact" class="nav-link block py-2">Contact</a>
         </div>
     </header>
@@ -283,6 +287,126 @@
             <p class="text-center text-sm mt-8 text-gray-600 dark:text-gray-400">
                 See my <a href="https://scholar.google.com/citations?user=6vzm-SMAAAAJ&hl=en#" target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">Google Scholar</a> for a full publication list.
                 </p>
+        </section>
+
+        <section id="awards" class="mb-12 scroll-mt-20 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold mb-6 border-b pb-2">Awards & Honors</h2>
+            <div id="awards-list" class="space-y-4">
+                <div class="award-item flex flex-col sm:flex-row items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <div class="w-full sm:w-1/6 mb-2 sm:mb-0 sm:mr-4 flex-shrink-0">
+                        <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">2025</span>
+                    </div>
+                    <div class="w-full sm:w-5/6">
+                        <p class="font-semibold text-md mb-1">Outstanding Graduate Student Award</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">University of Arizona, Department of Electrical and Computer Engineering</p>
+                    </div>
+                </div>
+                
+                <div class="award-item flex flex-col sm:flex-row items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <div class="w-full sm:w-1/6 mb-2 sm:mb-0 sm:mr-4 flex-shrink-0">
+                        <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">2024</span>
+                    </div>
+                    <div class="w-full sm:w-5/6">
+                        <p class="font-semibold text-md mb-1">Best Paper Award</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</p>
+                    </div>
+                </div>
+                
+                <div class="award-item hidden-item flex flex-col sm:flex-row items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <div class="w-full sm:w-1/6 mb-2 sm:mb-0 sm:mr-4 flex-shrink-0">
+                        <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">2023</span>
+                    </div>
+                    <div class="w-full sm:w-5/6">
+                        <p class="font-semibold text-md mb-1">Graduate Research Fellowship</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">National Science Foundation (NSF)</p>
+                    </div>
+                </div>
+            </div>
+            <button id="awards-toggle" class="toggle-button text-sm">Show More</button>
+        </section>
+
+        <section id="services" class="mb-12 scroll-mt-20 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold mb-6 border-b pb-2">Academic Services</h2>
+            <div class="space-y-6">
+                <!-- Journal Reviewer -->
+                <div class="service-category">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Journal Reviewer</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg class="icon w-4 h-4 mr-2 mt-0.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="icon w-4 h-4 mr-2 mt-0.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Computer Vision and Image Understanding (CVIU)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Conference Reviewer -->
+                <div class="service-category">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Conference Reviewer</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2 text-gray-700 dark:text-gray-300">Computer Vision:</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">CVPR (2023-2025)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">ICCV (2023, 2025)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">ECCV (2024)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2 text-gray-700 dark:text-gray-300">Machine Learning:</h4>
+                            <ul class="space-y-1 text-sm">
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">NeurIPS (2024-2025)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">ICML (2024-2025)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-600 dark:text-blue-400 mr-2">•</span>
+                                    <span class="text-gray-600 dark:text-gray-400">ICLR (2025)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Activities -->
+                <div class="service-category">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Professional Activities</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <svg class="icon w-4 h-4 mr-2 mt-0.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Student Volunteer, CVPR 2024</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="icon w-4 h-4 mr-2 mt-0.5 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-700 dark:text-gray-300">Graduate Student Association, ECE Department Representative</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="mb-12 scroll-mt-20 p-6 rounded-lg shadow-lg">
@@ -476,6 +600,7 @@
             }
 
             setupToggle('news-toggle', 'news-list', 'news-item', 2);
+            setupToggle('awards-toggle', 'awards-list', 'award-item', 2);
 
             setTimeout(onScroll, 100);
         });
